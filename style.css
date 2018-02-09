@@ -1,3 +1,41 @@
+@keyframes fadein {
+  from {
+    opacity:0;
+    transform: translateY(20px);
+  }
+
+  to {
+      opacity:1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes colorshift {
+  0% {
+    background-color:#e7e2ff;
+  }
+
+  20% {
+    background-color:#ffe2eb;
+  }
+
+  40% {
+    background-color:#fff5e2;
+  }
+
+  60% {
+    background-color:#f3ffe2;
+  }
+
+  80% {
+    background-color:#e2fff3;
+  }
+
+  100% {
+    background-color:#e7e2ff;
+  }
+}
+
 html, body {
   height:100%;
   width:100%;
@@ -5,33 +43,98 @@ html, body {
   font-family: 'Playfair Display', serif;
 }
 
+img {
+  width:100%;
+  height:auto;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 5em;
+  font-style: italic;
+  margin:0;
+  line-height: 1;
+}
+
+.main-img {
+  width:200px;
+  margin:0 auto;
+}
+
+h2 {
+  font-family: 'Playfair Display SC', serif;
+  letter-spacing: .2em;
+}
+
 .main-wrapper {
-  background-image:url(treebg.png);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size:cover;
-  background-color: red;
+  background-color: snow;
+  animation:colorshift 30s linear infinite;
   height:100%;
   width:100%;
   position: relative;
-  color:white;
+  color:#666;
   text-align: center;
+
+}
+
+.personal-info > * {
+  animation-name: fadein;
+  animation-duration: 500ms;
+  animation-fill-mode: backwards;
+  mix-blend-mode: multiply;
+}
+
+
+.personal-info > *:nth-child(1){
+  animation-delay:200ms;
+}
+
+.personal-info > *:nth-child(2){
+  animation-delay:300ms;
+}
+
+.personal-info > *:nth-child(3){
+  animation-delay:400ms;
+}
+
+.personal-info > *:nth-child(4){
+  animation-delay:500ms;
+}
+
+.personal-info > *:nth-child(5){
+  animation-delay:600ms;
+}
+
+.personal-info > *:nth-child(6){
+  animation-delay:700ms;
 }
 
 a {
   color:inherit;
   display: inline-block;
-  transition: 200ms;
+  transition: 1000ms;
   padding:1em;
-  border: 1px solid;
+  border: 1px solid #666;
   margin: .3em;
   text-decoration: none;
+  font-family: 'Nanum Gothic Coding', monospace;
+  width:3em;
+  height:2.2em;
+  padding-top:1.8em;
+  display: inline-block;
+  transform: rotate(0deg);
+  font-size: 12px;
 }
 
 a:hover {
-  background-color: white;
-  color:red;
+  background-color:#666;
+  color:snow;
   border-radius: 100px;
+  transition: 300ms;
+  transform: rotate(360deg);
 }
 
 img {
@@ -43,5 +146,6 @@ img {
   position:absolute;
   top:50%;
   left:50%;
-  transform: translateX(-50%) translateY(-50%);
+  min-width: 310px;
+  transform: translateX(-50%) translateY(-60%);
 }
