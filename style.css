@@ -10,6 +10,16 @@
   }
 }
 
+@keyframes spin {
+  from {
+    transform: rotateX(20deg) rotateY(0deg);
+  }
+
+  to {
+      transform: rotateX(20deg) rotateY(360deg);
+  }
+}
+
 @keyframes colorshift {
   0% {
     background-color:#e7e2ff;
@@ -41,6 +51,8 @@ html, body {
   width:100%;
   margin:0;
   font-family: 'Playfair Display', serif;
+  color:#1b1b1b;
+
 }
 
 img {
@@ -53,20 +65,45 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: 3em;
   font-style: italic;
   margin:0;
   line-height: 1;
 }
 
 .main-img {
-  width:200px;
+  width:250px;
+  height:300px;
   margin:0 auto;
+  position: relative;
+  transform-style: preserve-3d;
+  animation:spin 10s linear infinite;
 }
+
+.main-img .image-1,.main-img .image-2,.main-img .image-3,.main-img .image-4 {
+  position:absolute;
+  transition:600ms;
+}
+
+.main-img .image-1{
+  transform: rotateY(0deg);
+}
+
+.main-img .image-2{
+  transform: rotateY(120deg);
+}
+
+.main-img .image-3{
+  transform: rotateY(240deg);
+}
+
+
+
 
 h2 {
   font-family: 'Playfair Display SC', serif;
   letter-spacing: .2em;
+  font-size: 1em;
 }
 
 .main-wrapper {
@@ -75,16 +112,18 @@ h2 {
   height:100%;
   width:100%;
   position: relative;
-  color:#666;
   text-align: center;
 
+}
+
+.personal-info {
+  
 }
 
 .personal-info > * {
   animation-name: fadein;
   animation-duration: 500ms;
   animation-fill-mode: backwards;
-  mix-blend-mode: multiply;
 }
 
 
@@ -116,21 +155,21 @@ a {
   color:inherit;
   display: inline-block;
   transition: 1000ms;
-  padding:1em;
-  border: 1px solid #666;
+  padding:.3em;
+  border: 1px solid;
   margin: .3em;
   text-decoration: none;
   font-family: 'Nanum Gothic Coding', monospace;
   width:3em;
-  height:2.2em;
-  padding-top:1.8em;
+  height:2.1em;
+  padding-top:1.1em;
   display: inline-block;
   transform: rotate(0deg);
   font-size: 12px;
 }
 
 a:hover {
-  background-color:#666;
+  background-color:#1b1b1b;
   color:snow;
   border-radius: 100px;
   transition: 300ms;
